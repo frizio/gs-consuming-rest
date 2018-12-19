@@ -28,7 +28,10 @@ public class Application {
 		return args -> {
 			Quote quote = restTemplate.getForObject(
 					"http://gturnquist-quoters.cfapps.io/api/random", Quote.class);
+			log.info("-----------------------------");
+			quote.setType("SUCCESS");
 			log.info(quote.toString());
+			log.info("-----------------------------");
 		};
 	}
 }
